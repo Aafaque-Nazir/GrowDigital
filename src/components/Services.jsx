@@ -88,7 +88,7 @@ const Services = () => {
     <section
       id="services"
       className="section services-section"
-      style={{ perspective: "1000px" }}
+      style={{ perspective: "1000px", overflow: "hidden" }}
     >
       <div className="container">
         <motion.div

@@ -93,9 +93,12 @@ const CustomCursor = () => {
       <style>{`
         @media (max-width: 768px) {
           .cursor-dot, .cursor-outline { display: none !important; }
+          body, a, button { cursor: auto !important; }
         }
-        body { cursor: none; }
-        a, button { cursor: none; }
+        @media (min-width: 769px) {
+          body { cursor: none; }
+          a, button { cursor: none; }
+        }
       `}</style>
     </>
   );

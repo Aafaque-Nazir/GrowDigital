@@ -78,7 +78,10 @@ const Contact = () => {
     <section
       id="contact"
       className="section"
-      style={{ background: "linear-gradient(to bottom, #ffffff, #f0f9ff)" }}
+      style={{
+        background: "linear-gradient(to bottom, #ffffff, #f0f9ff)",
+        overflow: "hidden",
+      }}
     >
       <div className="container contact-grid">
         <motion.div
