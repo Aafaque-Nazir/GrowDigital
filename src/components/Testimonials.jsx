@@ -59,13 +59,7 @@ const Testimonials = () => {
           </motion.h2>
         </div>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "30px",
-          }}
-        >
+        <div className="testimonials-grid">
           {testimonialsData.map((t, i) => (
             <motion.div
               key={i}

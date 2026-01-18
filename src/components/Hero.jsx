@@ -108,21 +108,6 @@ const Hero = () => {
 
             {/* Floating Badge */}
             <motion.div
-              style={{
-                position: "absolute",
-                bottom: "40px",
-                left: "-20px",
-                background: "rgba(255, 255, 255, 0.95)",
-                backdropFilter: "blur(10px)",
-                padding: "15px 25px",
-                borderRadius: "16px",
-                boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
-                display: "flex",
-                alignItems: "center",
-                gap: "15px",
-                zIndex: 3,
-                border: "1px solid rgba(255,255,255,0.5)",
-              }}
               animate={{ y: [10, -10, 10] }}
               transition={{
                 duration: 5,
@@ -130,6 +115,7 @@ const Hero = () => {
                 ease: "easeInOut",
                 delay: 1,
               }}
+              className="floating-badge"
             >
               <div style={{ fontSize: "2rem" }}>📈</div>
               <div>
