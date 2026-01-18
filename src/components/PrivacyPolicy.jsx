@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import SEO from "./SEO";
 
 const PrivacyPolicy = () => {
   useEffect(() => {
@@ -11,6 +12,11 @@ const PrivacyPolicy = () => {
       className="section"
       style={{ paddingTop: "120px", minHeight: "100vh", background: "#f8fafc" }}
     >
+      <SEO
+        title="Privacy Policy"
+        description="Privacy Policy for Grow Digital. Learn how we handle your data."
+        canonical="/privacy-policy"
+      />
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

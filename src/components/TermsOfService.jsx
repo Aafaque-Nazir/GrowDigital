@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import SEO from "./SEO";
 
 const TermsOfService = () => {
   useEffect(() => {
@@ -11,6 +12,11 @@ const TermsOfService = () => {
       className="section"
       style={{ paddingTop: "120px", minHeight: "100vh", background: "#f8fafc" }}
     >
+      <SEO
+        title="Terms of Service"
+        description="Terms and conditions for using Grow Digital services."
+        canonical="/terms-of-service"
+      />
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

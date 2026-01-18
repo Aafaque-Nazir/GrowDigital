@@ -17,6 +17,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsOfService from "./components/TermsOfService";
+import SEO from "./components/SEO";
 
 // --- Custom Components ---
 
@@ -208,6 +209,10 @@ const ScrollToTop = () => {
 
 const Home = () => (
   <>
+    <SEO
+      title="Best Digital Marketing Agency"
+      description="Grow Digital is the #1 Digital Marketing Agency in Navi Mumbai. We boost ROI with expert SEO, Ads, and Web Design."
+    />
     <Hero />
     <Services />
     <Strategy />
