@@ -26,6 +26,13 @@ body {
   background-color: #f8fafc;
   color: var(--secondary);
   line-height: 1.6;
+  line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Global Overflow Fix */
+html {
   overflow-x: hidden;
 }
 
@@ -138,6 +145,31 @@ button { cursor: pointer; border: none; font-family: inherit; }
   box-shadow: 0 4px 10px rgba(0,0,0,0.04);
 }
 
+/* --- Floating Badge --- */
+.floating-badge {
+  position: absolute;
+  bottom: 40px;
+  left: -20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 15px 25px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 3;
+  border: 1px solid rgba(255,255,255,0.5);
+  white-space: nowrap;
+}
+
+/* --- Testimonials Grid --- */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
 /* --- Components & Utils --- */
 .btn {
   display: inline-flex; justify-content: center; align-items: center;
@@ -182,22 +214,36 @@ button { cursor: pointer; border: none; font-family: inherit; }
   .section { padding: 60px 0; }
   
   /* Optimized Services for Mobile - Horizontal Scroll */
+  /* Optimized Services for Mobile - Stacked */
   .services-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 15px;
-    padding-bottom: 20px;
-    margin: 0 -20px; /* Bleed to edge */
-    padding-left: 20px; /* Restore padding */
-    padding-right: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
   .service-card {
-    min-width: 280px; /* Fixed width cards */
-    scroll-snap-align: center;
+    width: 100%;
     background: white;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Softer shadow */
   }
+
+  /* Testimonials Mobile */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hero Badge Mobile */
+  .floating-badge {
+    left: 0; 
+    right: 0;
+    margin: 0 auto;
+    bottom: -20px;
+    width: max-content;
+    max-width: 90%;
+    justify-content: center;
+  }
+
+  /* Hide Swipe Hint */
+  .mobile-swipe-hint { display: none !important; }
   
   /* Nav Mobile */
   .mobile-toggle { display: block; z-index: 1100; }

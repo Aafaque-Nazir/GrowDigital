@@ -131,25 +131,6 @@ const Services = () => {
           </p>
         </motion.div>
 
-        {/* Mobile Swipe Hint */}
-        <div
-          className="mobile-swipe-hint"
-          style={{
-            display: "none",
-            textAlign: "right",
-            marginBottom: "10px",
-            color: "#94a3b8",
-            fontSize: "0.9rem",
-          }}
-        >
-          Swipe &rarr;
-        </div>
-        <style>{`
-          @media (max-width: 768px) {
-            .mobile-swipe-hint { display: block !important; }
-          }
-        `}</style>
-
         <motion.div
           className="services-grid"
           variants={containerVariants}
