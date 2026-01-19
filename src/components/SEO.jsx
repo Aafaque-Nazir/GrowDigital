@@ -1,15 +1,15 @@
 import { Helmet } from "react-helmet-async";
 
 const SEO = ({ title, description, keywords, canonical }) => {
-  const siteTitle = "Grow Digital | Expert Digital Marketing Agency";
+  const siteTitle = "Grooo Digital | Expert Digital Marketing Agency";
   const defaultDescription =
-    "Grow Digital is a premium digital marketing agency in Navi Mumbai. We specialize in SEO, Social Media, and Web Development to scale your business.";
-  const siteUrl = "https://growdigital.com"; // Replace with actual domain when live
+    "Grooo Digital is a premium digital marketing agency in Navi Mumbai. We specialize in SEO, Social Media, and Web Development to scale your business.";
+  const siteUrl = "https://grooodigital.com"; // Replace with actual domain when live
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: "Grow Digital",
+    name: "Grooo Digital",
     image: `${siteUrl}/favicon.png`,
     description: description || defaultDescription,
     url: siteUrl,
@@ -49,13 +49,13 @@ const SEO = ({ title, description, keywords, canonical }) => {
   return (
     <Helmet>
       {/* Basic SEO */}
-      <title>{title ? `${title} | Grow Digital` : siteTitle}</title>
+      <title>{title ? `${title} | Grooo Digital` : siteTitle}</title>
       <meta name="description" content={description || defaultDescription} />
       <meta
         name="keywords"
         content={
           keywords ||
-          "digital marketing agency, seo services, navi mumbai, web development, social media marketing, grow digital"
+          "digital marketing agency, seo services, navi mumbai, web development, social media marketing, grooo digital"
         }
       />
       {canonical && <link rel="canonical" href={`${siteUrl}${canonical}`} />}

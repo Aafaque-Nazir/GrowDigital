@@ -29,7 +29,7 @@ const Testimonials = () => {
     <section
       id="testimonials"
       className="section"
-      style={{ background: "#f8fafc", overflow: "hidden" }}
+      style={{ background: "#fbfbfb", overflow: "hidden" }}
     >
       <div className="container" style={{ position: "relative" }}>
         <div style={{ textAlign: "center", marginBottom: "60px" }}>

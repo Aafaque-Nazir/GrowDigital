@@ -44,7 +44,7 @@ const Header = () => {
     >
       <div className="container nav-container">
         <Link to="/" className="logo">
-          Grow <span style={{ color: "var(--secondary)" }}>Digital</span>
+          Grooo <span style={{ color: "var(--secondary)" }}>Digital</span>
         </Link>
 
         <button className="mobile-toggle" onClick={toggleMobile}>

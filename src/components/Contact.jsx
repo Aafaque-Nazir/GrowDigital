@@ -1,7 +1,48 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import toast from "react-hot-toast";
 import { Phone, Smartphone } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+
+const RevealingText = ({ text }) => {
+  const [display, setDisplay] = useState(
+    text
+      .split("")
+      .map((c) => (c === "+" || c === " " ? c : "0"))
+      .join(""),
+  );
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (isInView) {
+      let iteration = 0;
+      const interval = setInterval(() => {
+        setDisplay(
+          text
+            .split("")
+            .map((char, index) => {
+              if (index < iteration) {
+                return text[index];
+              }
+              if (char === " " || char === "+") return char;
+              return Math.floor(Math.random() * 10);
+            })
+            .join(""),
+        );
+
+        if (iteration >= text.length) {
+          clearInterval(interval);
+        }
+
+        iteration += 1 / 4;
+      }, 30);
+
+      return () => clearInterval(interval);
+    }
+  }, [isInView, text]);
+
+  return <span ref={ref}>{display}</span>;
+};
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -27,7 +68,7 @@ const Contact = () => {
       _captcha: "false", // Optional: disable captcha for cleaner flow if supported
     };
 
-    const promise = fetch("https://formsubmit.co/ajax/aafaquenazir@gmail.com", {
+    const promise = fetch("https://formsubmit.co/ajax/grooodigital@gmail.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -79,7 +120,7 @@ const Contact = () => {
       id="contact"
       className="section"
       style={{
-        background: "linear-gradient(to bottom, #ffffff, #f0f9ff)",
+        background: "linear-gradient(to bottom, #ffffff, #fbfbfb)",
         overflow: "hidden",
       }}
     >
@@ -186,7 +227,7 @@ const Contact = () => {
                 >
                   <Phone size={24} />
                 </span>
-                <span>+91 9325629256</span>
+                <RevealingText text="+91 9325629256" />
               </a>
               <a
                 href="tel:+919823617680"
@@ -212,7 +253,7 @@ const Contact = () => {
                 >
                   <Smartphone size={24} />
                 </span>
-                <span>+91 9823617680</span>
+                <RevealingText text="+91 9823617680" />
               </a>
             </div>
           </motion.div>

@@ -106,7 +106,7 @@ const CustomCursor = () => {
 
 const FloatingWhatsApp = () => (
   <motion.a
-    href="https://wa.me/919325629256?text=Hi%20Grow%20Digital,%20I%20want%20to%20scale%20my%20business!"
+    href="https://wa.me/919325629256?text=Hi%20Grooo%20Digital,%20I%20want%20to%20scale%20my%20business!"
     target="_blank"
     rel="noopener noreferrer"
     initial={{ scale: 0 }}
@@ -178,7 +178,7 @@ const Preloader = ({ onComplete }) => {
             letterSpacing: "-1px",
           }}
         >
-          GROW <span style={{ color: "var(--primary)" }}>DIGITAL</span>
+          GROOO <span style={{ color: "var(--primary)" }}>DIGITAL</span>
         </h1>
       </motion.div>
       <motion.div
@@ -214,7 +214,7 @@ const Home = () => (
   <>
     <SEO
       title="Best Digital Marketing Agency"
-      description="Grow Digital is the #1 Digital Marketing Agency in Navi Mumbai. We boost ROI with expert SEO, Ads, and Web Design."
+      description="Grooo Digital is the #1 Digital Marketing Agency in Navi Mumbai. We boost ROI with expert SEO, Ads, and Web Design."
     />
     <Hero />
     <Services />

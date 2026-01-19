@@ -58,7 +58,7 @@ const Footer = () => {
                 letterSpacing: "-0.5px",
               }}
             >
-              Grow <span style={{ color: "var(--primary)" }}>Digital</span>
+              Grooo <span style={{ color: "var(--primary)" }}>Digital</span>
             </div>
             <p
               style={{
@@ -221,10 +221,10 @@ const Footer = () => {
                   style={{ color: "var(--primary)", flexShrink: 0 }}
                 />
                 <a
-                  href="mailto:hello@growdigital.com"
+                  href="mailto:grooodigital@gmail.com"
                   style={{ color: "inherit" }}
                 >
-                  hello@growdigital.com
+                  grooodigital@gmail.com
                 </a>
               </li>
             </ul>
@@ -243,7 +243,9 @@ const Footer = () => {
             fontSize: "0.9rem",
           }}
         >
-          <p>© {new Date().getFullYear()} Grow Digital. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} Grooo Digital. All rights reserved.
+          </p>
           <div style={{ display: "flex", gap: "30px" }}>
             <Link
               to="/privacy-policy"

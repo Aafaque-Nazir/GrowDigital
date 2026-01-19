@@ -138,76 +138,72 @@ const Services = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
-          {servicesData.map((service, index) => (
-            <motion.div
-              key={index}
-              className="service-card"
-              variants={itemVariants}
-              whileHover={{
-                y: -15,
-                scale: 1.02,
-                boxShadow: "0 30px 60px -15px rgba(0, 110, 179, 0.2)",
-                borderColor: "rgba(0, 110, 179, 0.4)",
-              }}
-              style={{
-                background: "rgba(255, 255, 255, 0.8)",
-                backdropFilter: "blur(10px)",
-                border: "1px solid rgba(255,255,255,0.6)",
-                transformStyle: "preserve-3d",
-              }}
-            >
-              <motion.div
-                className="icon-box"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%)",
-                  boxShadow: "0 10px 20px rgba(0,0,0,0.05)",
-                  border: "1px solid rgba(255,255,255,0.8)",
-                  color: "var(--primary)",
-                }}
-                whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
-              >
-                <service.icon size={28} strokeWidth={1.5} />
-              </motion.div>
-              <h3
-                style={{
-                  fontSize: "1.3rem",
-                  fontWeight: "700",
-                  marginBottom: "12px",
-                  color: "var(--secondary)",
-                }}
-              >
-                {service.title}
-              </h3>
-              <p
-                style={{
-                  color: "var(--text-light)",
-                  fontSize: "1rem",
-                  flexGrow: 1,
-                  lineHeight: "1.6",
-                }}
-              >
-                {service.desc}
-              </p>
+          {servicesData.map((service, index) => {
+            // Bento Grid Logic
+            let gridClass = "";
+            if (index === 0) gridClass = "md-span-2"; // Social Media
+            if (index === 1) gridClass = "md-row-2"; // SEO
+            if (index === 5) gridClass = "md-span-2"; // Web Dev
+            if (index === 9) gridClass = "md-span-3"; // Strategy
 
-              {/* Depth Accent */}
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "4px",
-                  background:
-                    "linear-gradient(90deg, var(--primary), var(--accent))",
-                  opacity: 0,
-                  transition: "0.3s",
+            return (
+              <motion.div
+                key={index}
+                className={`service-card ${gridClass}`}
+                variants={itemVariants}
+                whileHover={{
+                  y: -15,
+                  scale: 1.02,
+                  boxShadow: "0 30px 60px -15px rgba(0, 110, 179, 0.2)",
+                  borderColor: "rgba(0, 110, 179, 0.4)",
                 }}
-                className="card-accent"
-              ></div>
-              <style>{`.service-card:hover .card-accent { opacity: 1; }`}</style>
-            </motion.div>
-          ))}
+                style={{
+                  transformStyle: "preserve-3d",
+                }}
+              >
+                <motion.div className="icon-box">
+                  <service.icon size={28} strokeWidth={1.5} />
+                </motion.div>
+                <h3
+                  style={{
+                    fontSize: "1.3rem",
+                    fontWeight: "700",
+                    marginBottom: "12px",
+                    color: "var(--secondary)",
+                  }}
+                >
+                  {service.title}
+                </h3>
+                <p
+                  style={{
+                    color: "var(--text-light)",
+                    fontSize: "1rem",
+                    flexGrow: 1,
+                    lineHeight: "1.6",
+                  }}
+                >
+                  {service.desc}
+                </p>
+
+                {/* Depth Accent */}
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "4px",
+                    background:
+                      "linear-gradient(90deg, var(--primary), var(--accent))",
+                    opacity: 0,
+                    transition: "0.3s",
+                  }}
+                  className="card-accent"
+                ></div>
+                <style>{`.service-card:hover .card-accent { opacity: 1; }`}</style>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>
